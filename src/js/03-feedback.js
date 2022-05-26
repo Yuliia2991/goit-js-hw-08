@@ -2,7 +2,10 @@ import throttle from 'lodash.throttle';
 
 const STORAGE_KEY = 'feedback-form-state';
 const formEl = document.querySelector('form');
-const formData = {};
+
+const formData = localStorage.getItem(STORAGE_KEY)
+  ? JSON.parse(localStorage.getItem(STORAGE_KEY))
+  : {};
 
 populateInputs();
 
